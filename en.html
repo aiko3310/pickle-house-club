@@ -273,6 +273,10 @@ html.pc,html.pc *{cursor:none!important}
 #pcur.hot .pf{fill:#9AA68C}
 #pcur svg{display:block;transition:transform .12s;transform-origin:19% 19%}
 #pcur.down svg{transform:rotate(-18deg) scale(.92)}
+.game-card{gap:2rem;align-items:center;flex-wrap:wrap}
+.game-shot{flex:1 1 300px;max-width:460px;display:block;border-radius:8px;overflow:hidden;border:1px solid var(--line);transition:transform .2s}
+.game-shot:hover{transform:translateY(-3px) rotate(-.6deg)}
+.game-shot img{display:block;width:100%;height:auto}
 </style>
 
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}.kin{word-spacing:.1em}</style>
@@ -460,6 +464,7 @@ html.pc,html.pc *{cursor:none!important}
     <p>A first-person pickleball browser game played by the real rules: two bounces, the kitchen and proper scoring. Play the computer, take on the cup challenge, or play online with up to 4 friends, on desktop or phone.</p>
     <a class="cta ghost" href="https://pickleball.16n.com.tw/" target="_blank" rel="noopener">Play Pickle Pow →</a>
   </div>
+  <a class="game-shot" href="https://pickleball.16n.com.tw/" target="_blank" rel="noopener"><img src="img/pickle-pow.jpg" alt="Pickle Pow gameplay: first-person doubles with a computer teammate" width="984" height="516" loading="lazy"></a>
 </aside>
 
 <section class="signup" id="signup">
