@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>匹克屋俱樂部</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 俯視球場長捲；淡綠場地、柔和白線、墨線與橄欖綠點綴 */
+:root{
+  --bg:#E7E4DF; --surface:#F1EFEB; --ink:#2A2D2A; --muted:#5F635C;
+  --line:#BDB8AE; --olive:#55633F; --sage:#9AA68C; --sage-soft:#D6D9CC;
+  --display:"Noto Serif TC","Songti TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+:root{color-scheme:light;
+  --cursor:-webkit-image-set(url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%2355633F%22/%3E%3C/g%3E%3C/svg%3E") 2x, url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%2355633F%22/%3E%3C/g%3E%3C/svg%3E") 1x) 6 6, url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%2355633F%22/%3E%3C/g%3E%3C/svg%3E") 6 6;
+  --cursor-hover:-webkit-image-set(url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%239AA68C%22/%3E%3C/g%3E%3C/svg%3E") 2x, url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%239AA68C%22/%3E%3C/g%3E%3C/svg%3E") 1x) 6 6, url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 shape-rendering=%22geometricPrecision%22%3E%3Cg transform=%22translate%2832 0%29 scale%28-1 1%29%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 paint-order=%22stroke%22%3E%3Cpath d=%22M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z%22 fill=%22%232A2D2A%22/%3E%3Cpath d=%22M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z%22 fill=%22%239AA68C%22/%3E%3C/g%3E%3C/svg%3E") 6 6}
+*{box-sizing:border-box}
+html,body{cursor:var(--cursor),auto}
+a,button,summary,label,[role=button]{cursor:var(--cursor-hover),pointer}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.8;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:880px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.3;margin:0}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0;max-width:62ch}
+a{color:var(--olive)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;color:var(--muted);font-weight:500}
+.sample{display:inline-block;font-size:.72rem;letter-spacing:.08em;color:var(--muted);border:1px dashed var(--line);padding:0 .5em;border-radius:3px;margin-left:.5em;vertical-align:middle;font-family:var(--body);font-weight:400}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav .wrap{display:flex;gap:1.4rem;overflow-x:auto;padding-block:.7rem;white-space:nowrap;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.92rem}
+nav a:hover{color:var(--ink)}
+nav .brand{font-family:var(--display);font-weight:900;color:var(--ink);margin-right:auto}
+
+header.hero{padding-block:4rem 3.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+header.hero h1{font-size:clamp(2.8rem,10vw,5rem);font-weight:900;letter-spacing:.08em}
+header.hero .en{font-family:var(--display);font-size:1.05rem;letter-spacing:.3em;color:var(--muted);margin-top:.4rem}
+header.hero .lead{margin-top:1.6rem;font-size:1.08rem;color:var(--muted)}
+.motto{margin-top:1.4rem;display:flex;gap:.9rem;font-family:var(--display);font-size:.9rem;letter-spacing:.25em;color:var(--olive)}
+.mark{width:min(300px,40vw)}
+.mark img{width:100%;height:auto;display:block;mix-blend-mode:multiply}
+@media (max-width:600px){header.hero{grid-template-columns:1fr}.mark{order:-1;width:170px}}
+header.hero .slogan{margin-top:1.6rem;font-family:var(--display);font-size:clamp(1.3rem,3.6vw,1.7rem);font-weight:700}
+header.hero .lead{margin-top:.6rem}
+
+.cta{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;background:var(--olive);color:var(--bg);text-decoration:none;padding:.75rem 1.4rem;border-radius:999px;font-weight:700}
+.cta:hover{filter:brightness(1.08)}
+.ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+.ctas .cta{margin-top:0}
+.cta.ghost{background:transparent;color:var(--olive);box-shadow:inset 0 0 0 1.5px var(--olive)}
+.cta.ghost:hover{background:var(--sage-soft);filter:none}
+
+.photo-wide{margin:0 0 3.5rem;border-radius:6px;overflow:hidden;aspect-ratio:16/8;max-width:100%}
+.photo-wide img{width:100%;height:100%;object-fit:cover;object-position:center 72%;display:block}
+.story{display:block}
+@media (max-width:720px){.story{grid-template-columns:1fr}}
+.story-text{display:flex;flex-direction:column;gap:1rem}
+.story-text p{color:var(--muted)}
+.story-text .closing{color:var(--ink);font-family:var(--display);font-size:1.15rem;font-weight:700;line-height:1.6}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.pics figure{margin:0;border-radius:6px;overflow:hidden;min-width:0}
+.pics img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5}
+.pics figcaption{font-size:.8rem;color:var(--muted);padding-top:.35rem}
+.four{margin-top:2.8rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem}
+.four div{border-top:2px solid var(--olive);padding-top:.9rem;min-width:0}
+.four b{font-family:var(--display);font-size:1.08rem;display:block;margin-bottom:.3rem}
+.four p{color:var(--muted);font-size:.95rem}
+
+.brand-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+@media (max-width:720px){.brand-intro{grid-template-columns:1fr}}
+.brand-intro .txt{display:flex;flex-direction:column;gap:1rem}
+.brand-intro .txt p{color:var(--muted)}
+.brand-intro .em{color:var(--ink);font-weight:700}
+.cert{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;padding:.6rem}
+.cert img{display:block;width:100%;height:auto}
+.cert figcaption{font-size:.8rem;color:var(--muted);padding:.5rem .2rem 0}
+.values{margin-top:2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.value{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.3rem 1.4rem;min-width:0;display:flex;flex-direction:column;gap:.35rem}
+.value .no{font-family:var(--mono);color:var(--olive);font-size:.85rem}
+.value .en{font-size:.78rem;letter-spacing:.14em;color:var(--muted)}
+.value p{color:var(--muted);font-size:.95rem}
+.collab{margin-top:2.6rem;border-left:3px solid var(--sage);padding:.2rem 0 .2rem 1.3rem;display:flex;flex-direction:column;gap:.7rem}
+.collab p{color:var(--muted)}
+.collab .em{color:var(--ink);font-family:var(--display);font-weight:700;font-size:1.1rem}
+
+section{padding-block:3.5rem;border-top:1px solid var(--line)}
+section > .head{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem}
+
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem 2.5rem}
+.about div{min-width:0}
+.about h3{margin-bottom:.4rem}
+.about p{color:var(--muted)}
+
+.court-box{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.5rem;overflow-x:auto}
+.court-box svg{display:block;width:100%;min-width:520px;height:auto}
+.court-box svg text{font-family:var(--body);fill:var(--muted);font-size:12px}
+.court-box svg .num{font-family:var(--mono);fill:var(--ink)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem 2.5rem;margin-top:2.2rem}
+.rules div{min-width:0}
+.rules h3{display:flex;gap:.6rem;align-items:baseline;margin-bottom:.35rem}
+.rules h3 span{font-family:var(--mono);font-size:.85rem;color:var(--olive);font-weight:500}
+.rules p{color:var(--muted)}
+.score{font-family:var(--mono);background:var(--sage-soft);padding:.05em .4em;border-radius:3px;color:var(--ink)}
+
+.paddle{margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.paddle div{border-top:2px solid var(--sage);padding-top:.8rem;min-width:0}
+.paddle b{font-family:var(--display)}
+.paddle p{color:var(--muted);font-size:.95rem}
+
+.dupr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+@media (max-width:640px){.dupr{grid-template-columns:1fr}}
+.scale{display:flex;flex-direction:column;gap:.55rem;font-size:.95rem}
+.scale .row{display:grid;grid-template-columns:4.5rem 1fr;gap:.8rem;align-items:center}
+.scale .val{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--olive)}
+.scale .bar{height:6px;background:var(--sage-soft);border-radius:3px;position:relative}
+.scale .bar i{position:absolute;inset:0 auto 0 0;background:var(--sage);border-radius:3px}
+.scale .lbl{grid-column:2;color:var(--muted);font-size:.85rem;margin-top:-.35rem}
+.steps{margin:1rem 0 0;padding-left:1.3rem;color:var(--muted)}
+.steps li{margin-bottom:.4rem}
+
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.class{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.class .lv{font-size:.78rem;letter-spacing:.12em;color:var(--olive);font-weight:700}
+.class p{color:var(--muted);font-size:.95rem}
+.class ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.93rem}
+
+details{border-bottom:1px solid var(--line);padding-block:1rem}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:var(--cursor-hover),pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--olive)}
+details[open] summary::after{content:"−"}
+details p{margin-top:.6rem;color:var(--muted)}
+
+.signup{background:var(--sage-soft);border-radius:8px;padding:2.4rem 2rem;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:space-between;border:none;margin-top:3.5rem}
+.signup .cta{margin-top:0}
+.signup p{color:var(--muted);margin-top:.4rem}
+
+footer{padding-block:3rem 2.5rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer .tags{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+@media (prefers-reduced-motion:no-preference){.cta{transition:filter .2s}}
+
+/* ---- 球場：整頁是一座俯視的匹克球場 ---- */
+:root{--court:#F2F5EE;--kitchen:#E9EEE3;--chalk:#FFFFFF;--pad:max(clamp(18px,4.5vw,52px),calc((100vw - 980px)/2))}
+.court{--g:max(16px,env(safe-area-inset-left,0px));margin:0 calc(-1*var(--g));background:var(--court);position:relative;padding:0 var(--pad);
+  box-shadow:inset 0 4px 0 var(--chalk),inset 0 -4px 0 var(--chalk)}
+.court section,.court .net{margin-inline:calc(-1*var(--pad));padding-inline:var(--pad);position:relative}
+.court section{border-top:3px solid transparent}
+.court header.hero{position:relative}
+.kitchen{background:var(--kitchen)}
+.svc::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;background:var(--chalk);opacity:.6;pointer-events:none}
+.svc > *,header.hero > *{position:relative;z-index:1}
+[data-zone]::before{content:attr(data-zone);position:absolute;right:calc(var(--pad) - 8px);top:-.85em;z-index:2;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--olive);background:inherit;padding:0 .6em;line-height:1.6}
+.court section[data-zone]::before{background:var(--court)}
+.court section.kitchen[data-zone]::before{background:var(--kitchen)}
+header.hero[data-zone]::before{background:var(--court);top:-.2em}
+footer[data-zone]{position:relative}
+footer[data-zone]::before{top:auto;bottom:-.8em;background:var(--court)}
+.net{height:120px;display:grid;place-items:center;border-top:9px solid transparent;
+  background:repeating-linear-gradient(0deg,transparent 0 9px,rgba(42,45,42,.16) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,rgba(42,45,42,.16) 9px 10px),var(--court)}
+.net::after{display:none;content:"";position:absolute;left:-12px;right:-12px;top:-14px;height:18px;
+  background:radial-gradient(circle at 9px 9px,var(--ink) 7px,transparent 7.5px) left/18px 18px no-repeat,radial-gradient(circle at 9px 9px,var(--ink) 7px,transparent 7.5px) right/18px 18px no-repeat}
+.net[data-zone]::before{background:var(--court);top:-.7em}
+.net p{background:var(--court);padding:.35rem 1.2rem;border-radius:999px;font-family:var(--display);font-weight:700;letter-spacing:.3em;color:var(--olive);max-width:none;text-align:center}
+.court .signup{margin:3.5rem 0 0;padding:2.4rem 2rem;border-top:none;background:var(--surface)}
+.zone-now{font-size:.78rem;color:var(--olive);border:1px solid var(--sage);border-radius:999px;padding:0 .8em;height:2em;line-height:calc(2em - 2px);flex:none;display:inline-block;align-self:center;box-sizing:border-box}
+.c-ball,.c-shadow{position:absolute;left:0;top:0;pointer-events:none;z-index:4;will-change:transform}
+.c-ball{width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#C9D65A;box-shadow:inset -3px -3px 0 rgba(0,0,0,.12);
+  background-image:radial-gradient(circle at 32% 34%,rgba(0,0,0,.2) 1.4px,transparent 1.9px),radial-gradient(circle at 68% 42%,rgba(0,0,0,.2) 1.4px,transparent 1.9px),radial-gradient(circle at 46% 72%,rgba(0,0,0,.2) 1.4px,transparent 1.9px)}
+.c-shadow{width:20px;height:9px;margin:-4px 0 0 -10px;border-radius:50%;background:rgba(42,45,42,.28);filter:blur(1px)}
+.c-dust{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:2px solid var(--chalk);pointer-events:none;z-index:3;animation:pop .5s ease-out forwards}
+.pop{position:fixed;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:2px solid var(--olive);pointer-events:none;z-index:50;animation:pop .45s ease-out forwards}
+@keyframes pop{from{transform:scale(.2);opacity:.9}to{transform:scale(1.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){.c-ball,.c-shadow{display:none}}
+@media (prefers-reduced-motion:no-preference){
+  .cta{transition:transform .15s,filter .2s,background .2s}
+  .cta:hover{transform:translateY(-2px) rotate(-1.5deg)}
+  .cta:active{transform:scale(.94) rotate(3deg)}
+}
+
+.join-text{display:flex;flex-direction:column;gap:.4rem;min-width:0;flex:1 1 280px}
+.join-text .cta{align-self:flex-start;margin-top:1rem}
+.qr{width:150px;height:150px;border-radius:8px;background:#fff;padding:6px;flex:none}
+
+/* ---- 文字動態 ---- */
+.kin span{display:inline-block}
+.rotline{margin-top:1rem;font-size:1.05rem}
+.rot{display:inline-block;position:relative;overflow:hidden;vertical-align:bottom;height:1.8em;padding:0 .35em;margin:0 .15em;background:#C9D65A;border-radius:6px;font-weight:700;color:var(--ink)}
+.rot span{display:inline-block}
+.court .head h2{align-self:flex-start;position:relative;isolation:isolate}
+.court .head h2::after{content:"";position:absolute;left:-.15em;right:-.15em;bottom:.08em;height:.38em;background:#C9D65A;opacity:.55;z-index:-1;border-radius:3px;transform-origin:left;transform:scaleX(1)}
+.court .head h2 .bb{position:absolute;left:0;bottom:.12em;width:.5em;height:.5em;margin-left:-.25em;border-radius:50%;background:#C9D65A;box-shadow:inset -2px -2px 0 rgba(0,0,0,.15);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .kin span{animation:hop .7s cubic-bezier(.3,1.7,.5,1) both;animation-delay:calc(var(--i)*90ms + 150ms)}
+  @keyframes hop{0%{transform:translateY(-.6em) scale(.7)}55%{transform:translateY(.05em) scale(1.04,.94)}100%{transform:none}}
+  .rot span.out{animation:rotOut .32s ease-in forwards}
+  .rot span.in{animation:rotIn .42s cubic-bezier(.3,1.5,.5,1) both}
+  @keyframes rotOut{to{transform:translateY(-110%);opacity:0}}
+  @keyframes rotIn{from{transform:translateY(110%)}to{transform:none}}
+  .court .head h2.go{animation:blurIn .75s cubic-bezier(.2,.9,.3,1) both}
+  @keyframes blurIn{from{filter:blur(9px);transform:translateX(-28px) skewX(-8deg);letter-spacing:.12em}to{filter:none;transform:none}}
+  .court .head h2.go::after{animation:trail .65s .12s cubic-bezier(.4,0,.2,1) both}
+  @keyframes trail{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .court .head h2.go .bb{animation:fly .65s .12s cubic-bezier(.4,0,.2,1) both}
+  @keyframes fly{0%{left:0;opacity:1;transform:translateY(0)}50%{transform:translateY(-.5em)}90%{opacity:1}100%{left:100%;opacity:0;transform:translateY(0)}}
+}
+
+/* ---- #5 劃線：球場線被畫出來 ---- */
+.cline{position:absolute;left:0;right:0;top:-3px;height:3px;background:var(--chalk);transform-origin:left;pointer-events:none;z-index:1}
+.net > .cline{top:-9px;height:9px}
+/* ---- #6 方向填色 ---- */
+nav a:not(.brand),.cta.ghost{position:relative;isolation:isolate;overflow:hidden}
+nav a:not(.brand){padding:.15em .6em;border-radius:999px;flex:none}
+nav a:not(.brand)::after,.cta.ghost::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--sage-soft);clip-path:circle(0 at var(--fx,50%) var(--fy,50%));pointer-events:none}
+.cta.ghost::after{background:#C9D65A}
+nav a:not(.brand):hover::after,.cta.ghost:hover::after,nav a:not(.brand):focus-visible::after{clip-path:circle(150% at var(--fx,50%) var(--fy,50%))}
+.cta.ghost:hover{background:transparent;color:var(--ink)}
+/* ---- #7 假 3D ---- */
+.tilt{transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;will-change:transform}
+@media (prefers-reduced-motion:no-preference){
+  .cline{transition:transform .9s cubic-bezier(.6,0,.2,1)}
+  .cline.wait{transform:scaleX(0)}
+  .svc::after{transform-origin:top;transition:transform 1.1s .5s cubic-bezier(.6,0,.2,1)}
+  .svc.wait::after{transform:scaleY(0)}
+  nav a:not(.brand)::after,.cta.ghost::after{transition:clip-path .38s cubic-bezier(.4,0,.2,1)}
+  .tilt{transition:transform .25s ease-out}
+}
+
+/* ---- 內容進場：像球落地、斜角來回 ---- */
+@media (prefers-reduced-motion:no-preference){
+  .rv-x{animation:rvX .7s cubic-bezier(.2,.9,.3,1) backwards;animation-delay:var(--d,0ms)}
+  @keyframes rvX{from{opacity:0;transform:translateX(var(--sx,-40px)) rotate(var(--sr,-2deg))}}
+  .rv-drop{animation:rvDrop .8s cubic-bezier(.3,1.5,.5,1) backwards;animation-delay:var(--d,0ms)}
+  @keyframes rvDrop{0%{opacity:0;transform:translateY(-46px) scale(.92)}55%{opacity:1;transform:translateY(5px) scale(1.02,.97)}100%{transform:none}}
+  .rv-up{animation:rvUp .6s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:var(--d,0ms)}
+  @keyframes rvUp{from{opacity:0;transform:translateY(22px)}}
+  .rv-bar .bar i{animation:rvBar 1s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:var(--d,0ms);transform-origin:left}
+  .rv-bar .val{animation:rvUp .5s backwards;animation-delay:var(--d,0ms)}
+  @keyframes rvBar{from{transform:scaleX(0)}}
+  .rv-draw svg line,.rv-draw svg rect{stroke-dasharray:1;animation:rvDash 1.3s cubic-bezier(.6,0,.2,1) backwards}
+  .rv-draw svg line:nth-of-type(2n){animation-delay:.25s}
+  .rv-draw svg text{animation:rvUp .6s .7s backwards}
+  @keyframes rvDash{from{stroke-dashoffset:1}}
+}
+.game-card{margin-top:3.5rem;border:1.5px dashed var(--sage);border-radius:8px;padding:2rem;display:flex;background:var(--court)}
+.game-card h3{font-size:1.35rem}
+.game-card p{color:var(--muted)}
+nav a.lang{flex:none;font-size:.8rem;font-weight:700;color:var(--olive);border:1px solid var(--sage);border-radius:999px;padding:0 .7em;height:2em;line-height:calc(2em - 2px);box-sizing:border-box;align-self:center;margin-right:.4rem}
+
+/* 上半部左右平衡 */
+header.hero{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+header.hero .mark{justify-self:center;width:min(340px,100%)}
+.story{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2.5rem 3.5rem;align-items:start}
+.story-side h3{margin:0 0 1.2rem}
+.story-side .four{margin-top:0!important;grid-template-columns:1fr 1fr;gap:1.6rem 1.4rem}
+.rules{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:720px){.story,.rules,.story-side .four{grid-template-columns:1fr!important}header.hero{grid-template-columns:1fr}header.hero .mark{justify-self:start;width:170px}}
+
+/* 向量球拍游標（任何螢幕都清晰） */
+html.pc,html.pc *{cursor:none!important}
+#pcur{position:fixed;left:0;top:0;width:var(--pc-size,44px);height:var(--pc-size,44px);pointer-events:none;z-index:9999;will-change:transform;opacity:0;transition:opacity .15s}
+#pcur.on{opacity:1}
+#pcur .pf{fill:#55633F;transition:fill .15s}
+#pcur.hot .pf{fill:#9AA68C}
+#pcur svg{display:block;transition:transform .12s;transform-origin:19% 19%}
+#pcur.down svg{transform:rotate(-18deg) scale(.92)}
+</style>
+
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top">匹克屋</a><span class="zone-now" id="zone" aria-live="off">你的底線</span><a class="lang" href="en.html" lang="en">EN</a>
+  <a href="#about">我們是誰</a>
+  <a href="#rookie">新手專區</a>
+  <a href="#dupr">DUPR</a>
+  <a href="#enhance">器材品牌</a>
+  <a href="#faq">常見問題</a>
+  <a href="#game">線上遊戲</a>
+  <a href="#signup">加入社群</a>
+</div></nav>
+
+<div class="court" id="top"><span class="c-shadow" id="cshadow"></span><span class="c-ball" id="cball"></span>
+<header class="hero svc" data-zone="BASELINE · 底線">
+  <div>
+    <h1 class="kin"><span style="--i:0">匹</span><span style="--i:1">克</span><span style="--i:2">屋</span></h1>
+    <p class="en">PICKLE HOUSE CLUB · 台北・新北</p>
+    <p class="slogan kin"><span style="--i:4">不只打球，</span><span style="--i:6">更是一種生活。</span></p>
+    <p class="lead">從球場相遇，到成為一起揮拍的朋友。</p>
+    <p class="rotline">在匹克屋，<span class="rot" aria-live="off"><span id="rotw">新手</span></span>都找得到位置。</p>
+    <div class="ctas">
+      <a class="cta" href="#signup">探索球聚活動 →</a>
+      <a class="cta ghost" href="#enhance">尋找你的球拍</a>
+      <a class="cta ghost" href="https://line.me/ti/g2/Ln3LY-9_a149KOAsFbgJtEmOgG4IZeOgz2b8KQ?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">加入匹克屋</a>
+    </div>
+  </div>
+  <div class="mark"><img src="img/logo.png" alt="匹克屋 Logo：屋頂、葉子、匹克球與球拍，標語「匹克生活・揮拍日常」" width="900" height="900"></div>
+</header>
+
+<section id="about" class="svc" data-zone="SERVICE COURT · 發球區">
+  <div class="head">
+    <h2>關於匹克屋</h2>
+    <p style="font-family:var(--display);color:var(--olive);letter-spacing:.2em">匹克生活・揮拍日常</p>
+  </div>
+  <div class="story">
+    <div class="story-text">
+      <p>Pickle House Club｜匹克屋俱樂部，誕生於一群熱愛匹克球的球友。</p>
+      <p>從最初單純喜歡打球、研究球拍，到開始引進國外優質器材、舉辦球聚活動，我們希望打造的不只是一間匹克球商店，而是一個讓所有人都能自在參與的匹克球社群。</p>
+      <p>在這裡，無論你是第一次接觸匹克球的新手，還是希望持續突破自己的進階玩家，都能找到適合自己的位置。</p>
+      <p>我們相信，匹克球最迷人的地方，不只是球場上的勝負，更是每一次揮拍的快樂、每一場比賽的成長，以及因為這項運動而認識的朋友。</p>
+      <p class="closing">我們希望，匹克屋不只是你購買球拍的地方，<br>更是你想打球時，第一個想到的地方。</p>
+    </div>
+    <div class="story-side">
+      <h3>我們致力於四個方向</h3>
+      <div class="four">
+    <div><b>球友交流</b><p>舉辦友善、有趣的球聚，讓不同程度的球友都能享受打球的樂趣。</p></div>
+    <div><b>專業器材</b><p>引進優質匹克球品牌，提供真實的使用心得、試打體驗與選拍建議。</p></div>
+    <div><b>教學成長</b><p>從基礎教學到實戰練習，協助球友建立技術、累積信心。</p></div>
+    <div><b>競技推廣</b><p>規劃 DUPR 積分賽、交流賽與各類競賽，讓每位球友都能看見自己的進步。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rookie" class="svc" data-zone="SERVICE COURT · 發球區">
+  <div class="head">
+    <h2>新手專區</h2>
+    <p>第一次接觸匹克球？先認識球場，再記住四條核心規則，就能上場了。</p>
+  </div>
+
+  <div class="court-box">
+    <svg viewBox="0 0 640 300" role="img" aria-label="匹克球場示意圖：長 13.41 公尺、寬 6.10 公尺，網子兩側各 2.13 公尺為廚房區">
+      <rect x="40" y="40" width="560" height="200" fill="var(--sage-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="293" y="40" width="54" height="200" fill="var(--sage)" opacity=".55"/>
+      <line x1="320" y1="30" x2="320" y2="250" stroke="var(--ink)" stroke-width="4"/>
+      <line x1="293" y1="40" x2="293" y2="240" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="347" y1="40" x2="347" y2="240" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="40" y1="140" x2="293" y2="140" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="347" y1="140" x2="600" y2="140" stroke="var(--ink)" stroke-width="2"/>
+      <text x="320" y="22" text-anchor="middle">球網</text>
+      <text x="306" y="145" text-anchor="middle" writing-mode="tb" style="font-size:11px;fill:var(--ink)">廚房</text>
+      <text x="334" y="145" text-anchor="middle" writing-mode="tb" style="font-size:11px;fill:var(--ink)">廚房</text>
+      <text x="166" y="95" text-anchor="middle">右發球區</text>
+      <text x="166" y="195" text-anchor="middle">左發球區</text>
+      <text x="474" y="95" text-anchor="middle">左發球區</text>
+      <text x="474" y="195" text-anchor="middle">右發球區</text>
+      <line x1="40" y1="268" x2="600" y2="268" stroke="var(--muted)"/>
+      <text class="num" x="320" y="288" text-anchor="middle">13.41 m（44 ft）</text>
+      <line x1="620" y1="40" x2="620" y2="240" stroke="var(--muted)"/>
+      <text class="num" x="626" y="144" writing-mode="tb" text-anchor="middle" style="font-size:11px">6.10 m</text>
+      <text class="num" x="320" y="262" text-anchor="middle" style="font-size:11px">2.13 m｜2.13 m</text>
+    </svg>
+  </div>
+
+  <div class="rules">
+    <div><h3><span>規則 1</span>低手發球</h3><p>發球要由下往上揮，擊球點低於腰部，斜對角發到對方發球區，不能落在廚房區。</p></div>
+    <div><h3><span>規則 2</span>雙彈跳</h3><p>發球後，接發球方必須讓球落地一次再打；發球方回擊時也要讓球落地一次。之後才可以截擊。</p></div>
+    <div><h3><span>規則 3</span>廚房不截擊</h3><p>網前兩側各 2.13 公尺是「廚房」（非截擊區）。站在廚房內，或截擊後的慣性帶你踩進去，都算失誤。球落地後才能進廚房打。</p></div>
+    <div><h3><span>規則 4</span>計分方式</h3><p>先得 11 分且領先 2 分獲勝。傳統制只有發球方能得分，雙打報分依序為 <span class="score">我方分數－對方分數－發球序</span>，例如 <span class="score">4-2-1</span>。</p></div>
+  </div>
+
+  <h3 style="margin-top:3rem">第一支拍子怎麼選</h3>
+  <div class="paddle">
+    <div><b>重量</b><p>新手建議 7.5–8.2 盎司（約 210–230 g）的中等重量，好控制又不容易累。</p></div>
+    <div><b>拍面材質</b><p>玻璃纖維彈性較好、容易打深；碳纖維手感紮實、旋轉與控球表現較佳。</p></div>
+    <div><b>握把粗細</b><p>握住拍子時，指尖和掌心之間大約能放進一根食指，就是適合的粗細。</p></div>
+    <div><b>先借再買</b><p>不確定喜歡哪種手感？先來球敘試打幾支，再決定也不遲。</p></div>
+  </div>
+</section>
+
+<section id="dupr" class="kitchen" data-zone="KITCHEN LINE · 2.13 m">
+  <div class="head">
+    <h2>DUPR 是什麼</h2>
+  </div>
+  <div class="dupr">
+    <div>
+      <p>DUPR（Dynamic Universal Pickleball Rating）是全球通用的匹克球積分系統。它根據你每一場比賽的比分與對手程度計算等級，不分年齡、性別，打得越多、數字越準。</p>
+      <p style="margin-top:1rem">在匹克屋，我們用 DUPR 來安排程度相近的對戰，讓每一局都打得有來有往。</p>
+      <h3 style="margin-top:1.6rem">開始使用</h3>
+      <ol class="steps">
+        <li>下載 DUPR App，用 Email 免費註冊</li>
+        <li>參加有登錄成績的比賽或團內積分場</li>
+        <li>比賽結束後由主辦或對手登錄比分，雙方確認</li>
+        <li>累積幾場後，等級就會逐漸穩定</li>
+      </ol>
+    </div>
+    <div class="scale" aria-label="DUPR 等級參考">
+      <div class="row"><span class="val">2.0–2.9</span><span class="bar"><i style="width:15%"></i></span></div><span class="lbl">剛入門，熟悉規則與基本擊球</span>
+      <div class="row"><span class="val">3.0–3.4</span><span class="bar"><i style="width:35%"></i></span></div><span class="lbl">能穩定來回，開始練吊球</span>
+      <div class="row"><span class="val">3.5–3.9</span><span class="bar"><i style="width:52%"></i></span></div><span class="lbl">懂得網前站位，會運用第三拍</span>
+      <div class="row"><span class="val">4.0–4.9</span><span class="bar"><i style="width:72%"></i></span></div><span class="lbl">戰術清楚、失誤少，進階對戰</span>
+      <div class="row"><span class="val">5.0+</span><span class="bar"><i style="width:90%"></i></span></div><span class="lbl">高階到職業水準</span>
+    </div>
+  </div>
+</section>
+
+<div class="net" data-zone="NET · 中央 86 cm"><p>匹克生活・揮拍日常</p></div>
+
+<section id="enhance" class="kitchen" data-zone="KITCHEN · 廚房區">
+  <div class="head">
+    <h2>ENHANCE PICKLEBALL</h2>
+    <p style="font-family:var(--display);font-size:1.15rem;font-weight:700">以創新科技，重新定義匹克球體驗</p>
+  </div>
+  <div class="brand-intro">
+    <div class="txt">
+      <p class="em">源自美國，為熱愛競技與追求進步的玩家而生。</p>
+      <p>Enhance Pickleball 是由兩位前 NCAA Division I 網球選手共同創立的美國匹克球品牌。秉持著對運動的熱情與對產品性能的追求，Enhance 致力於研發兼具創新科技、優異性能與合理價格的匹克球器材。</p>
+      <p>品牌相信，優秀的運動裝備不應只是少數人的選擇。無論是剛接觸匹克球的新手，還是追求更高競技水準的進階玩家，都應該有機會體驗高性能器材帶來的樂趣。</p>
+      <p>透過不斷探索球拍結構、核心材料與擊球性能，Enhance 希望讓每一位玩家都能找到適合自己的球拍，持續突破自我。</p>
+      <p class="em">好的器材不只是提升表現，更能讓玩家享受每一次揮拍。</p>
+    </div>
+    <figure class="cert">
+      <img src="img/enhance-cert.jpg" alt="Enhance Pickleball 授權零售暨批發合作夥伴證書，授權對象 Pickle House，生效日 2026 年 6 月 1 日" width="1200" height="945">
+      <figcaption>Enhance Pickleball 官方授權零售暨批發合作夥伴證書・2026 年 6 月 1 日生效</figcaption>
+    </figure>
+  </div>
+  <h3 style="margin-top:2.6rem">品牌三大核心理念</h3>
+  <div class="values" style="margin-top:1.2rem">
+    <div class="value"><span class="no">01</span><h3>創新科技</h3><span class="en">INNOVATION</span><p>持續探索球拍材料與結構設計，追求更出色的力量、旋轉、穩定性與操控表現。</p></div>
+    <div class="value"><span class="no">02</span><h3>性能表現</h3><span class="en">PERFORMANCE</span><p>以運動員的實戰需求為核心，打造能夠協助玩家提升競技表現的專業器材。</p></div>
+    <div class="value"><span class="no">03</span><h3>讓高性能更容易入手</h3><span class="en">ACCESSIBILITY</span><p>在產品性能與價格之間取得平衡，讓更多匹克球愛好者都能享受到優質裝備。</p></div>
+  </div>
+  <div class="collab">
+    <h3>Enhance × Pickle House</h3>
+    <p>匹克屋 Pickle House 與 Enhance 品牌方建立正式合作關係，希望將來自美國的創新匹克球器材介紹給更多台灣球友。</p>
+    <p>我們不只是提供球拍，更希望透過實際試打、產品介紹與選拍建議，讓每位球友都能找到符合自己打法與需求的裝備。</p>
+    <p class="em">好的球拍，讓每一次揮拍都有更多可能。</p>
+  </div>
+</section>
+
+<section id="faq" class="svc" data-zone="SERVICE COURT · 發球區">
+  <div class="head">
+    <h2>常見問題</h2>
+  </div>
+  <details><summary>完全沒打過可以來嗎？</summary><p>可以。球敘時告訴大家你是新手，會有人帶你打。</p></details>
+  <details><summary>需要自備球拍和球嗎？</summary><p>第一次來可以先借用，球由團內準備。打一陣子確定喜歡，再買自己的拍子。</p></details>
+  <details><summary>要穿什麼？</summary><p>輕便運動服，搭配有側向支撐的球鞋（羽球鞋、網球鞋都可以），避免穿跑鞋，側移時比較容易扭到。</p></details>
+  <details><summary>一定要有 DUPR 才能打嗎？</summary><p>不用。DUPR 只是幫助分組的工具，沒有積分一樣可以參加球敘。</p></details>
+  <details><summary>匹克球跟網球、羽球差在哪？</summary><p>場地約是羽球場大小，球拍是實心平面拍，球是有孔的塑膠球，速度較慢、容易上手，但網前攻防很講究技巧。</p></details>
+</section>
+
+<aside class="game-card" id="game">
+  <div class="join-text">
+    <p class="eyebrow">ONLINE · 劈哩匹克 PICKLE POW</p>
+    <h3>下雨沒得打？線上來一場</h3>
+    <p>第一人稱的匹克球網頁遊戲，照真實規則打：雙彈跳、廚房區、計分一樣不少。可以單挑電腦、闖盃賽，也能找球友最多 4 人連線對戰，電腦和手機都能玩。</p>
+    <a class="cta ghost" href="https://pickleball.16n.com.tw/" target="_blank" rel="noopener">開打劈哩匹克 →</a>
+  </div>
+</aside>
+
+<section class="signup" id="signup">
+  <div class="join-text">
+    <h2>本週想打球嗎？</h2>
+    <p>我們的球聚、課程與賽事都在雙北（台北・新北）。臨打、DUPR、教學與賽事資訊都在匹克屋的 LINE 社群，掃描 QR Code 或點按鈕就能加入。</p>
+    <a class="cta" href="https://line.me/ti/g2/Ln3LY-9_a149KOAsFbgJtEmOgG4IZeOgz2b8KQ?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">加入 LINE 社群 →</a>
+  </div>
+  <img class="qr" src="img/line-qr.png" alt="匹克屋俱樂部 LINE 社群 QR Code" width="342" height="342">
+</section>
+
+<footer data-zone="BASELINE · 底線">
+  <span>© 2026 Pickle House Club｜匹克屋俱樂部・匹克生活・揮拍日常<br><span style="font-size:.78rem">游標圖示：pickleball by Aether Io from <a href="https://thenounproject.com/browse/icons/term/pickleball/" title="pickleball Icons">Noun Project</a>（CC BY 3.0）</span></span>
+  <span class="tags"><span>#匹克球</span><span>#DUPR</span><span>#球敘</span><span>#臨打</span><span>#教學</span></span>
+</footer>
+</div>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let ac=null;
+function pock(f=1,v=.3){try{if(!ac)return;const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain(),fl=ac.createBiquadFilter();
+  o.type='triangle';o.frequency.setValueAtTime(1100*f,t);o.frequency.exponentialRampToValueAtTime(380*f,t+.06);
+  fl.type='bandpass';fl.frequency.value=1400*f;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+.09);
+  o.connect(fl);fl.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.1)}catch(e){}}
+document.addEventListener('pointerdown',e=>{
+  try{ac=ac||new (window.AudioContext||window.webkitAudioContext)()}catch(err){}
+  if(e.target.closest('a,button,summary'))pock(1.1,.22);
+  if(reduce)return;const d=document.createElement('span');d.className='pop';d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';
+  document.body.appendChild(d);setTimeout(()=>d.remove(),500)});
+
+/* 球：跟著捲動在球場上斜角來回飛，每到一條線就落地一次 */
+const court=document.querySelector('.court'),ball=document.getElementById('cball'),sh=document.getElementById('cshadow'),zoneEl=document.getElementById('zone');
+const marks=[...court.querySelectorAll('[data-zone]')];
+const names={'BASELINE':'你的底線','SERVICE':'發球區','KITCHEN LINE':'廚房線','NET':'球網','KITCHEN':'對面廚房'};
+let stops=[],labels=[],seg=-1;
+function measure(){const top=court.getBoundingClientRect().top+scrollY;
+  stops=[40];labels=['你的底線'];
+  marks.forEach((m,i)=>{if(i===0)return;stops.push(m.getBoundingClientRect().top+scrollY-top+(m.classList.contains('net')?60:0));
+    const z=m.dataset.zone;let n=z.startsWith('NET')?'球網':z.startsWith('KITCHEN LINE')?'廚房線':z.startsWith('KITCHEN')?'對面廚房':z.startsWith('BASELINE')?'對面底線':'發球區';
+    if(n==='發球區'&&stops.length>5)n='對面發球區';labels.push(n)});
+  stops.push(court.offsetHeight-30);labels.push('對面底線');tick()}
+function tick(){const W=court.clientWidth,top=court.getBoundingClientRect().top+scrollY;
+  let y=scrollY+innerHeight*.55-top;y=Math.max(stops[0],Math.min(stops[stops.length-1],y));
+  let i=0;while(i<stops.length-2&&y>=stops[i+1])i++;
+  const s0=stops[i],s1=stops[i+1],t=(y-s0)/Math.max(1,s1-s0);
+  const pl=parseFloat(getComputedStyle(court).paddingLeft)||0,cw=W-2*pl,X=f=>pl+f*cw;
+  const xa=X(i%2?.74:.26),xb=X(i%2?.26:.74),x=xa+(xb-xa)*t;
+  const hmax=Math.min(170,(s1-s0)*.3),h=Math.sin(Math.PI*t)*hmax,k=h/170;
+  ball.style.transform=`translate(${x}px,${y-h}px) scale(${1+k*.55}) rotate(${t*540}deg)`;
+  sh.style.transform=`translate(${x}px,${y}px) scale(${1-k*.4})`;sh.style.opacity=1-k*.6;
+  if(seg!==-1&&i!==seg&&!reduce){const bx=(i>seg)?xa:X(seg%2?.26:.74),by=(i>seg)?s0:stops[seg];
+    const d=document.createElement('span');d.className='c-dust';d.style.left=bx+'px';d.style.top=by+'px';court.appendChild(d);setTimeout(()=>d.remove(),550);pock(.6,.14)}
+  seg=i;zoneEl.textContent=labels[Math.min(labels.length-1,t>.5?i+1:i)]}
+addEventListener('scroll',tick,{passive:true});addEventListener('resize',measure);addEventListener('load',measure);
+if(document.fonts)document.fonts.ready.then(measure);measure();
+
+/* #5 捲動時劃出球場線 */
+const lineHosts=[...court.querySelectorAll('section,.net')].filter(el=>!el.classList.contains('signup'));
+lineHosts.forEach((el,k)=>{const l=document.createElement('i');l.className='cline';l.setAttribute('aria-hidden','true');if(k%2)l.style.transformOrigin='right';el.prepend(l)});
+if(!reduce&&'IntersectionObserver' in window){
+  lineHosts.forEach(el=>{el.querySelector('.cline').classList.add('wait');if(el.classList.contains('svc'))el.classList.add('wait')});
+  const lio=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const el=en.target;requestAnimationFrame(()=>{el.querySelector('.cline').classList.remove('wait');el.classList.remove('wait')});lio.unobserve(el)}}),{rootMargin:'0px 0px -15% 0px'});
+  lineHosts.forEach(el=>lio.observe(el))}
+/* #6 從滑鼠進入的方向填色 */
+document.querySelectorAll('nav a:not(.brand),.cta.ghost').forEach(a=>{
+  const setP=e=>{const r=a.getBoundingClientRect();a.style.setProperty('--fx',((e.clientX-r.left)/r.width*100)+'%');a.style.setProperty('--fy',((e.clientY-r.top)/r.height*100)+'%')};
+  a.addEventListener('pointerenter',setP);a.addEventListener('pointerleave',setP)});
+/* #7 假 3D 傾斜 */
+if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.mark,.class,.value').forEach(el=>{el.classList.add('tilt');const max=el.classList.contains('mark')?14:7;
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--ry',(x*max*2)+'deg');el.style.setProperty('--rx',(-y*max*2)+'deg')});
+    el.addEventListener('pointerleave',()=>{el.style.setProperty('--ry','0deg');el.style.setProperty('--rx','0deg')})})}
+
+/* 內容進場 */
+if(!reduce&&'IntersectionObserver' in window){
+  const box=document.querySelector('.court-box svg');if(box)box.querySelectorAll('line,rect').forEach(e=>e.setAttribute('pathLength','1'));
+  const groups=[['.four > div','x'],['.paddle > div','x'],['.rules > div','x'],['.steps li','x'],['.classes > .class','drop'],['.values > .value','drop'],['.cert','drop'],['.court .signup','drop'],['.game-card','drop'],
+    ['.court details','up'],['.collab','up'],['.story-text > p','up'],['.brand-intro .txt > p','up'],['.scale .row','bar'],['.court-box','draw']];
+  const rio=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('rv-'+en.target.dataset.rv);rio.unobserve(en.target)}}),{rootMargin:'0px 0px 60px 0px'});
+  groups.forEach(([sel,t])=>{document.querySelectorAll(sel).forEach((el,k)=>{
+    const idx=[...el.parentElement.children].filter(c=>c.matches(sel)).indexOf(el);
+    el.dataset.rv=t;el.style.setProperty('--d',(Math.max(0,idx)*(t==='up'?70:110))+'ms');
+    if(t==='x'){el.style.setProperty('--sx',(idx%2?'40px':'-40px'));el.style.setProperty('--sr',(idx%2?'2deg':'-2deg'))}
+    if(el.getBoundingClientRect().top<innerHeight*.9)return;rio.observe(el)})})}
+
+/* 副標寬度對齊大標題 */
+function fitEn(){const h=document.querySelector('header.hero h1'),e=document.querySelector('header.hero .en');if(!h||!e)return;
+  const sp=h.querySelectorAll('span');if(!sp.length)return;const hf=parseFloat(getComputedStyle(h).fontSize),hls=parseFloat(getComputedStyle(h).letterSpacing)||0;
+  const target=(sp[sp.length-1].offsetLeft+sp[sp.length-1].offsetWidth)-sp[0].offsetLeft-hls;
+  const ls=.15;e.style.display='inline-block';e.style.whiteSpace='nowrap';e.style.letterSpacing=ls+'em';e.style.fontSize='16px';
+  const w=e.offsetWidth-ls*16;if(w<=0||target<=0)return;const fs=16*target/w;e.style.fontSize=fs+'px';e.style.marginRight=(-ls)+'em';e.style.marginLeft=(sp[0].offsetLeft-h.offsetLeft)+'px'}
+fitEn();addEventListener('resize',fitEn);addEventListener('load',fitEn);if(document.fonts)document.fonts.ready.then(fitEn);
+
+/* 向量球拍游標 */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+  const pc=document.createElement('div');pc.id='pcur';pc.innerHTML='<svg viewBox="0 0 32 32" width="100%" height="100%" aria-hidden="true"><g transform="translate(32 0) scale(-1 1)" stroke="#fff" stroke-width="1.2" stroke-linejoin="round" paint-order="stroke"><path d="M6.09,27.25l-.8,.8c-.3,.3-.77,.3-1.07,0l-1.36-1.36c-.3-.3-.3-.77,0-1.07l.84-.84c.08-.08,.2-.08,.28,0l3.48-3.48,2.15,2.15-3.48,3.48s.06,.22-.04,.32Z" fill="#2A2D2A"/><path class="pf" d="M27.93,14.41l-6.36,6.36c-1.56,1.56-3.92,1.84-5.77,.83h0c-2.7-.98-4.1,.41-4.1,.41l-.37,.37c-.21,.21-.55,.21-.76,0l-2.05-2.05c-.21-.21-.21-.55,0-.76l.37-.37s1.39-1.4,.41-4.1h0c-1.01-1.85-.73-4.2,.83-5.77l6.36-6.36c1.9-1.9,4.98-1.9,6.88,0l4.55,4.55c1.9,1.9,1.9,4.98,0,6.88Z"/></g></svg>';document.body.appendChild(pc);document.documentElement.classList.add('pc');
+  const hs=6/32;let sz=pc.offsetWidth||44;
+  addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;sz=pc.offsetWidth;pc.style.transform=`translate(${e.clientX-sz*hs}px,${e.clientY-sz*hs}px)`;pc.classList.add('on');
+    pc.classList.toggle('hot',!!e.target.closest('a,button,summary,label,[role=button]'))},{passive:true});
+  document.addEventListener('pointerleave',()=>pc.classList.remove('on'));
+  addEventListener('pointerdown',()=>pc.classList.add('down'));addEventListener('pointerup',()=>pc.classList.remove('down'));
+}
+/* 字詞輪播 */
+const words=['新手','進階玩家','DUPR 選手','每一位球友'];let wi=0;const rw=document.getElementById('rotw');
+if(rw&&!reduce)setInterval(()=>{rw.classList.remove('in');rw.classList.add('out');
+  setTimeout(()=>{wi=(wi+1)%words.length;rw.textContent=words[wi];rw.classList.remove('out');rw.classList.add('in')},320)},2300);
+else if(rw)setInterval(()=>{wi=(wi+1)%words.length;rw.textContent=words[wi]},2600);
+/* 標題：模糊衝入＋球劃過留下軌跡 */
+if(!reduce&&'IntersectionObserver' in window){const hs=document.querySelectorAll('.court .head h2');
+  hs.forEach(h=>{const b=document.createElement('span');b.className='bb';h.appendChild(b)});
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('go');pock(1.05,.12);io.unobserve(en.target)}}),{threshold:.7});
+  hs.forEach(h=>io.observe(h))}
+
+})();
+</script>
+
+</body>
+</html>
