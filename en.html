@@ -306,6 +306,18 @@ html.pc,html.pc *{cursor:none!important}
 .game-shot{flex:1 1 300px;max-width:460px;display:block;border-radius:8px;overflow:hidden;border:1px solid var(--line);transition:transform .2s}
 .game-shot:hover{transform:translateY(-3px) rotate(-.6deg)}
 .game-shot img{display:block;width:100%;height:auto}
+
+/* 手機：Logo 與標題同列、球場圖等比縮放 */
+@media (max-width:720px){
+  header.hero{display:block;position:relative}
+  header.hero > .mark{position:absolute;top:calc(4rem - 14px);right:0;width:clamp(96px,30vw,132px);order:0;margin:0;transform:none}
+  header.hero > div:first-child{position:relative}
+  header.hero h1,header.hero .en{max-width:calc(100% - clamp(96px,30vw,132px) - 12px)}
+  .court-box{padding:.75rem;overflow:visible}
+  .court-box svg{min-width:0;width:100%}
+  .court-box svg text{font-size:20px!important}
+  .court-box svg text.num{font-size:18px!important}
+}
 </style>
 
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}.kin{word-spacing:.1em}</style>
